@@ -1,5 +1,5 @@
 <template>
-  <li class="item">
+  <li >
     <a href="">{{text}}</a>
   </li>
 </template>
@@ -15,13 +15,20 @@ export default {
 </script>
 
 <style>
-    #item li a {
-        display: inline;
-        padding: 15px;
+    li a {
         text-decoration: none;
+        color: white;
+        
     }
-    #item li a.active {
-        background-color: indigo;
-        color: red;
+    li {
+        width: 100%;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+        
     }
+    li:hover {
+        background-color: tomato;
+    }
+    
 </style>
