@@ -1,5 +1,7 @@
 
 <template>
+    <input placeholder="Searchbox" />
+
   
 </template>
 

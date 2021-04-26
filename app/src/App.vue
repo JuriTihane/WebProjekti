@@ -1,16 +1,18 @@
 <template>
   
-  <Main :msg= content[0].text />
+  <NavBar  />
 </template>
 
 <script>
-import Main from './components/Main.vue'
+//import Main from './components/Main.vue'
+import NavBar from './components/NavBar.vue'
 
 
 export default {
   name: 'App',
   components: {
-    Main
+    
+    NavBar
   },
   data () {
     return {

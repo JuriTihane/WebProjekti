@@ -1,17 +1,16 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <NavBar  />
+  <div >
+    
     
   </div>
   
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
+
 
 export default {
-  components: { NavBar },
+  
   name: 'Main',
   props: {
     msg: String
