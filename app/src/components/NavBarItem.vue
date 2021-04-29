@@ -1,6 +1,7 @@
 <template>
   <li >
-    <a href="">{{text}}</a>
+    <a >{{text}}</a>
+    <p class="dropDownItems" > </p>
   </li>
 </template>
 
@@ -9,7 +10,8 @@ export default {
     name: 'NavBarItem',
     props: {
         text: String,
-        
+        dropdownItems: Array,
+        link: Function,
     }
 }
 </script>
@@ -23,12 +25,13 @@ export default {
     li {
         width: 100%;
         display: flex;
-  justify-content: center;
-  align-items: center;
+        justify-content: center;
+        align-items: center;
         
     }
     li:hover {
         background-color: tomato;
     }
+    
     
 </style>

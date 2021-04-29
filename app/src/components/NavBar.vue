@@ -1,9 +1,10 @@
 <template>
   <div id="navigation">
       <ul>
-        <NavBarItem text="Forum" ></NavBarItem>
-        <NavBarItem text="dsda" > </NavBarItem>
-        <NavBarItem text="Log In" > </NavBarItem>
+        <NavBarItem text="Forum" link="" ></NavBarItem>
+        <NavBarItem text="Browse" > </NavBarItem>
+        <NavBarItem text="Ask" > </NavBarItem>
+        <NavBarItem text="Log In" dropdownItems= navBarContent.userAction > </NavBarItem>
         <SearchBar  />
       </ul>
   </div>
@@ -12,6 +13,9 @@
 <script>
 import NavBarItem from './NavBarItem.vue'
 import SearchBar from './SearchBar.vue'
+
+
+
 export default {
     components: {
       'NavBarItem': NavBarItem,
@@ -20,14 +24,22 @@ export default {
     name: 'categories',
     data () {
       return {
-        show : false,
+        navBarContent: {
+          userAction: [
+            {item: "Log In"},
+            {item: "Sign Up"}
+          ],
+        }
       }
+    },
+    methods: {
+      
     }
 
 }
 </script>
 
-<style>
+<style scoped>
    ul {
     list-style-type: none;
     margin: 0;

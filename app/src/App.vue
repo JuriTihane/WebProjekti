@@ -1,27 +1,25 @@
 <template>
-  
-  <NavBar  />
+  <div>
+    <NavBar  />
+    <Main  />
+  </div>
 </template>
 
 <script>
-//import Main from './components/Main.vue'
+import Main from './components/Main.vue'
 import NavBar from './components/NavBar.vue'
 
 
 export default {
   name: 'App',
   components: {
-    
+    Main,    
     NavBar
   },
   data () {
     return {
-      content: [
-        {
-          id: 1,
-          text: "Foorumi"
-        }
-      ]
+      
+      
     }
   }
 }
