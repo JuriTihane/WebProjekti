@@ -1,7 +1,7 @@
 <template>
   <div>
-    <NavBar  />
-    <Main  />
+    <NavBar/>
+    <Main/>
   </div>
 </template>
 
@@ -9,33 +9,30 @@
 import Main from './components/Main.vue'
 import NavBar from './components/NavBar.vue'
 
-
 export default {
   name: 'App',
   components: {
-    Main,    
+    Main,
     NavBar
   },
-  data () {
-    return {
-      
-      
-    }
+  data() {
+    return {}
   }
 }
 
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/*#app {*/
+/*  font-family: Avenir, Helvetica, Arial, sans-serif;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*  text-align: center;*/
+/*  color: #2c3e50;*/
+/*}*/
+
 body {
-    background-color: white;
-  }
+  background-color: white;
+  margin: 0;
+}
 </style>

@@ -1,14 +1,13 @@
-
 <template>
-    <input placeholder="Searchbox" />
+  <label>
+    <input placeholder="Searchbox"/>
+  </label>
 
-  
+
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style>

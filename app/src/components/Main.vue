@@ -1,39 +1,23 @@
 <template>
-  <div id="mainWindow" >
-    <Browse authors = {{authors}} questions = {{questions}} > </Browse>
-    
+  <div id="mainWindow">
+    <Browse></Browse>
+
   </div>
-  
+
 </template>
 
 <script>
 import Browse from './Browse.vue'
 
 export default {
-  
+
   name: 'Main',
   components: {
     Browse
   },
-  props: {
-    
-  },
-  data () {
-    return {
-      
-        authors: [
-            
-              {author: 'Matti'},
-              {author: 'Maija'},
-        ],
-        questions: [
-              {question: 'What is namespace in C++'},
-              {question: 'How to filter through an array in Javascript'},
-        ]
-        }
-      }
-    }
-  
+  props: {}
+}
+
 
 </script>
 

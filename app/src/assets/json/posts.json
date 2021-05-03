@@ -1,7 +1,44 @@
-
-{
-    "author": "Matti",
-    "question": "How to filter through an array in Javascript",
-    "Language": "Javascript"
-    
-}
+[
+  {
+    "id": 1,
+    "author": "Author1",
+    "topic": "Javascript",
+    "title": "Title1",
+    "content": "JS content",
+    "comments": [
+      {
+        "id": 1,
+        "author": "Author1_comment",
+        "content": "Author1_comment_content"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "author": "Author2",
+    "topic": "C++",
+    "title": "Title2",
+    "content": "C++ content",
+    "comments": [
+      {
+        "id": 1,
+        "author": "Author2_comment",
+        "content": "Author2_comment_content"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "author": "Author3",
+    "topic": "C#",
+    "title": "Title3",
+    "content": "C# content",
+    "comments": [
+      {
+        "id": 1,
+        "author": "Author3_comment",
+        "content": "Author3_comment_content"
+      }
+    ]
+  }
+]
