@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SearchBar  />
     <ul v-if="posts && posts.length">
       <li v-for="post of posts" v-bind:key="post">
         <p><strong>{{post.title}}</strong></p>
@@ -17,8 +18,13 @@
 
 <script>
 import axios from 'axios';
+import SearchBar from './SearchBar'
 
 export default {
+  name: 'Browse',
+  components: {
+    SearchBar
+  },
   data() {
     return {
       posts: [],

@@ -1,28 +1,28 @@
 <template>
   <div id="navigation">
     <ul>
-      <NavBarItem text="Forum" link=""></NavBarItem>
-      <NavBarItem text="Browse" v-on:click="$emit('func')"  ></NavBarItem>
-      <NavBarItem text="Ask"></NavBarItem>
-      <NavBarItem text="Log In" dropdownItems=navBarContent.userAction></NavBarItem>
-      <SearchBar/>
+      <NavBarItem text="Forum" ></NavBarItem>
+      <NavBarItem text="Browse" v-on:click="$emit('funcBrowse')"  ></NavBarItem>
+      <NavBarItem text="Ask" v-on:click="$emit('funcAsk')"></NavBarItem>
+      <NavBarItem text="Log In" v-on:click="$emit('funcLogin')" ></NavBarItem>
+      
     </ul>
   </div>
 </template>
 
 <script>
 import NavBarItem from './NavBarItem.vue'
-import SearchBar from './SearchBar.vue'
+
 
 export default {
   components: {
     'NavBarItem': NavBarItem,
-    SearchBar
+    
   },
   name: 'categories',
   props: {
-    func: Function,
-    x : Boolean
+    
+
   },
   data() {
     return {
