@@ -2,7 +2,7 @@
   <div id="navigation">
     <ul>
       <NavBarItem text="Forum" link=""></NavBarItem>
-      <NavBarItem text="Browse"></NavBarItem>
+      <NavBarItem text="Browse" v-on:click="$emit('func')"  ></NavBarItem>
       <NavBarItem text="Ask"></NavBarItem>
       <NavBarItem text="Log In" dropdownItems=navBarContent.userAction></NavBarItem>
       <SearchBar/>
@@ -20,8 +20,13 @@ export default {
     SearchBar
   },
   name: 'categories',
+  props: {
+    func: Function,
+    x : Boolean
+  },
   data() {
     return {
+      
       navBarContent: {
         userAction: [
           {item: "Log In"},
@@ -30,7 +35,13 @@ export default {
       }
     }
   },
-  methods: {}
+  methods: {
+
+    
+    
+  }
+  
+  
 
 }
 </script>

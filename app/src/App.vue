@@ -1,24 +1,40 @@
 <template>
   <div>
-    <NavBar/>
-    <Main/>
+    <NavBar v-bind="x" @func="() => x = !x" />
+    <Browse v-show="!x"  />
+    
   </div>
 </template>
 
 <script>
-import Main from './components/Main.vue'
+import Browse from './components/Browse.vue'
 import NavBar from './components/NavBar.vue'
 
 export default {
   name: 'App',
   components: {
-    Main,
+    Browse,
     NavBar
   },
   data() {
-    return {}
+    return {
+      
+      x : true,
+      
+      
+
+    }
+  },
+  methods: {
+    func: () => {
+      
+      // eslint-disable-next-line no-unused-vars
+      
+      
+    }
   }
 }
+
 
 </script>
 
@@ -35,4 +51,5 @@ body {
   background-color: white;
   margin: 0;
 }
+
 </style>

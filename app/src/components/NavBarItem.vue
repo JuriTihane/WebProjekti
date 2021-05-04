@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li v-on:click="$emit('showItems')" >
     <a>{{ text }}</a>
     <p class="dropDownItems"></p>
   </li>
@@ -12,6 +12,7 @@ export default {
     text: String,
     dropdownItems: Array,
     link: Function,
+    x : Boolean
   }
 }
 </script>
