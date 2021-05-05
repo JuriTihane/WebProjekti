@@ -46,6 +46,10 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+* {
+  font-size: 1em;
+  font-family: Arial;
+}
 
 </style>

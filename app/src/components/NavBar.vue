@@ -1,6 +1,6 @@
 <template>
   <div id="navigation">
-    <ul>
+    <ul class="navigation-bar" >
       <NavBarItem text="Forum" ></NavBarItem>
       <NavBarItem text="Browse" v-on:click="$emit('funcBrowse')"  ></NavBarItem>
       <NavBarItem text="Ask" v-on:click="$emit('funcAsk')"></NavBarItem>
@@ -46,8 +46,8 @@ export default {
 }
 </script>
 
-<style scoped>
-ul {
+<style >
+.navigation-bar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -55,5 +55,7 @@ ul {
   background-color: green;
   justify-content: space-around;
   height: 3rem;
+  font-family: Arial;
+  font-size: 1.4em;
 }
 </style>
