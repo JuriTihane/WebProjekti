@@ -37,7 +37,7 @@ export default {
       errors: [],
       activePost: null,
       comment: '',
-      referenceID: ''
+      referenceTitle: ''
     }
   },
 
@@ -46,6 +46,7 @@ export default {
       try {
         console.log("COMMMEEEENT" + this.comment)
         await axios.post(`http://localhost:3000/postComment/`, {
+          referenceTitle: this.activePost.title,
           id: 0,
           author: "author0",
           content: this.comment
@@ -102,10 +103,10 @@ export default {
 
 #div_post {
   width: 100%;
+  margin-left: 10px;
 }
 
 #ul_post {
-  border: 1px solid black;
   padding: 0;
 }
 
@@ -130,7 +131,6 @@ export default {
 
 #input_comment {
   display: none;
-  margin-left: auto;
   margin-right: auto;
 }
 
