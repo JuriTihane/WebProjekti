@@ -1,7 +1,6 @@
 <template>
-  <li v-on:click="$emit('showItems')" >
+  <li id="navbaritem" v-on:click="$emit('showItems')" >
     <a>{{ text }}</a>
-    <p class="dropDownItems"></p>
   </li>
 </template>
 
@@ -18,13 +17,13 @@ export default {
 </script>
 
 <style>
-li a {
+#navbaritem a {
   text-decoration: none;
   color: white;
 
 }
 
-li {
+#navbaritem {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -32,7 +31,7 @@ li {
 
 }
 
-li:hover {
+#navbaritem:hover {
   background-color: tomato;
 }
 
