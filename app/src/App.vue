@@ -2,19 +2,26 @@
   <div>
     <NavBar v-bind="xBrowse" 
     @funcBrowse="() => {
-      xBrowse = !xBrowse
+      xLogin = false
+      xAsk = false
+      xBrowse = true
     }" 
     @funcAsk="() => {
-      xAsk = !xAsk
+      xLogin = false
+      xBrowse = false
+      xAsk = true
     }"
     @funcLogin="() => {
-      xLogin = !xLogin
+      xAsk = false
+      xBrowse = false
+      xLogin = true
+      
     }"
      />
 
-    <Browse v-show="!xBrowse"  />
-    <Ask v-show="!xAsk" />
-    <Login v-show="!xLogin" />
+    <Browse v-show="xBrowse"  />
+    <Ask v-show="xAsk" />
+    <Login v-show="xLogin" />
     
   </div>
 </template>
@@ -36,9 +43,9 @@ export default {
   data() {
     return {
       
-      xBrowse : true,
-      xAsk : true,
-      xLogin : true
+      xBrowse : false,
+      xAsk : false,
+      xLogin : false
       
 
     }
