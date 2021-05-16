@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="div_test">
     <SearchBar/>
     <ul id="ul_post" v-if="posts && posts.length">
       <li id="li_post" v-for="post of posts" v-bind:key="post" @click.prevent="activePost = post">
@@ -9,7 +9,14 @@
           <p :class="['active',{ 'seens' : !post.seen, 'selected': post === activePost}]" id="p_post_comments_title"><strong>Comments</strong></p>
           <button v-on:click="sendComment(); update()" :class="['active',{ 'seens' : !post.seen, 'selected': post === activePost}]" id="button_comments">Add comment</button>
           <input id="input_comment" type="text" :class="['active',{ 'seens' : !post.seen, 'selected': post === activePost}]" v-model="comment"/>
-          <p :class="['active',{ 'seens' : !post.seen, 'selected': post === activePost}]" id="p_post_comments">{{post.comments}}</p>
+
+          <div v-for="comment1 in post.comments" :key="comment1" id="div_post_comment" :class="['active',{ 'seens' : !post.seen, 'selected': post === activePost}]">
+            <p v-if="comment1.date" v-text="'Time added: ' + comment1.date"></p>
+            <p v-if="comment1.author" v-text="'Author: ' + comment1.author" id="p_post_comments_author"></p>
+            <p v-if="comment1.content" v-text="'Comment: ' + comment1.content" id="p_post_comments_content"></p>
+            <p v-else v-text="'Content missing...'"></p>
+          </div>
+
         </div>
       </li>
     </ul>
@@ -58,7 +65,6 @@ export default {
     // Fetches post every 1 second, trigger in created()
     async update() {
       try {
-        console.log("UUU")
         const response = await axios.get(`http://localhost:3000/json/`)
         this.posts = response.data
       } catch (e) {
@@ -81,6 +87,11 @@ export default {
 </script>
 
 <style>
+#div_test {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 #p_post_content.active.seens.selected {
   display: block;
 }
@@ -97,17 +108,30 @@ export default {
   display: block;
 }
 
-#p_post_comments.active.seens.selected {
+#div_post_comment.active.seens.selected {
   display: block;
 }
 
+#p_post_title {
+  width: 50%;
+}
+
+#p_post_content {
+  width: 98%;
+}
+
+#p_post_comments_title {
+  width: 50%;
+}
+
 #div_post {
-  width: 100%;
+  width: 98%;
   margin-left: 10px;
 }
 
 #ul_post {
   padding: 0;
+  list-style-type: none;
 }
 
 #li_post {
@@ -121,10 +145,6 @@ export default {
   display: none;
 }
 
-#p_post_comments {
-  display: none;
-}
-
 #button_comments {
   display: none;
 }
@@ -132,6 +152,18 @@ export default {
 #input_comment {
   display: none;
   margin-right: auto;
+}
+
+#div_post_comment {
+  display: none;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding-left: 20px;
+}
+
+#p_post_comments_content {
+  margin-bottom: 0;
 }
 
 #p_post_comments_title {

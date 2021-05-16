@@ -50,14 +50,6 @@ export default {
 
     }
   },
-  methods: {
-    func: () => {
-      
-      // eslint-disable-next-line no-unused-vars
-      console.log("Funciin tuli kutsu")
-      
-    }
-  }
 }
 
 
